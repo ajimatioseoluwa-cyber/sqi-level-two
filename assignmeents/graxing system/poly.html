@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polytechnic grading system</title>
+</head>
+<style>
+.section2{
+    border-radius: 20px;
+    background-color: white;
+    margin-top: 20%;
+    width: 50%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.inner{
+     display: flex;
+    justify-self: center;
+    justify-content: center;
+}
+.inner2{
+     display: flex;
+    justify-self: center;
+    justify-content: center;
+}
+#result{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+}
+</style>
+<body style="background: url(poly-bg.jfif); background-repeat: no-repeat; background-size: cover;">
+    <div class="section2">
+        <div class="inner">
+            <input id="userInput" type="number" placeholder="Enter score here" style="width: 25vw; height: 5vh; padding: 10px;">
+            <button onclick="myGrade()" style="background-color: red; border: none;">check here</button>
+        </div>
+            <br>
+            <div class="inner2">
+                <span id="result"></span>
+            </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

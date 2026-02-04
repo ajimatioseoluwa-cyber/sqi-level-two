@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>randomizer</title>
+</head>
+<body>
+    <input type="number" id="userInputOne" placeholder="enter min number">
+    <input type="number" id="userInputTwo" placeholder="enter max number">
+
+    <button onclick="rando()">generate</button>
+    <p id="results"></p>
+    <script>
+        function rando() {
+
+            const userInputOne = Number(document.getElementById('userInputOne').value);
+            const userInputTwo = Number(document.getElementById('userInputTwo').value);
+            
+            if(userInputOne > userInputTwo) {
+                let userOne = userInputOne
+                userInputOne = userInputTwo
+                userInputTwo = userOne
+            }
+            
+            const randomNumber = Math.floor(Math.random()*(userInputTwo - userInputOne + 1)) + userInputOne ;
+            results.innerHTML = randomNumber
+        }
+        
+        // function rando(){
+        //     math.random(); userInput
+
+        //     console.log(math);
+            
+        // }
+    </script>
+</body>
+</html>

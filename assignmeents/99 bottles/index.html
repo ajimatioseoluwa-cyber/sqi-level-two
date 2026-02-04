@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="bottle"></div>
+    <script>
+    for (let i=100; i>=1;  i--){
+        if (i > 1) {
+            bottle.innerHTML += `<p>${i} bottles of beer on the wall, ${i} bottles of beer.</p>`
+            bottle.innerHTML += `<p>take one down and pass it around, ${i - 1} bottles of beer on the wall</p>`
+        } else {
+            bottle.innerHTML += `<p>No more bottles of beer on the wall, no more bottles of beer</p>`
+            bottle.innerHTML += `<p>go to the store and buy some more, 99 bottles of beer on the wall</p>`
+        }
+    }
+    </script>
+</body>
+</html>

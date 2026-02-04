@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="useRInput" placeholder="Enter your Age">
+    <input type="number" id="userInput" placeholder="Enter your weight">
+    <button onclick="confam()">check</button>
+    <p id="results">the result will be shown here</p>
+    <script>
+        // function confam() {
+        //    const weight= document.getElementById('userInput').value;
+        //    const age = document.getElementById('useRInput').value;
+        //     console.log(weight);
+        //     console.log(age);
+            
+        //     if(weight >= 90 && age < 15){
+        //         results.innerHTML = ''
+        //         results.innerHTML = '<p>You are over weight</p>'
+        //     }else if (weight < 50 || weight > 40  && age < 15){
+        //         results.innerHTML = ''
+        //         results.innerHTML = '<p>You are at the appropraite weight</p>'
+        //     }else if (weight < 40 && age < 8 || age > 15){
+        //         results.innerHTML = ''
+        //         results.innerHTML = '<p>You are under weight</p>'
+        //     }else if (weight < 90 && age < 18 || age > 70){
+        //         results.innerHTML = ''
+        //         results.innerHTML = '<p>You are over weight</p>'
+        //     }else if (weight <= 70 || weight < 45 && age < 18 || age > 70){
+        //         results.innerHTML = ''
+        //         results.innerHTML = '<p>You are at the appropraite weight</p>'
+        //     }
+        // }
+        function confam() {
+    // Convert values to Numbers so the math works correctly
+    const weight = Number(document.getElementById('userInput').value);
+    const age = Number(document.getElementById('useRInput').value);
+    const results = document.getElementById('results');
+
+    // 1. Logic for Children (Under 15)
+    if (age < 15) {
+        if (weight >= 90) {
+            results.innerHTML = 'You are over weight';
+        } else if (weight >= 40 && weight < 50) {
+            results.innerHTML = 'You are at the appropriate weight';
+        } else if (weight < 40) {
+            results.innerHTML = 'You are under weight';
+        } else {
+            results.innerHTML = 'Weight is outside general child range';
+        }
+    } 
+    // 2. Logic for Adults/Seniors
+    else if (age >= 18) {
+        if (weight >= 90) {
+            results.innerHTML = 'You are over weight';
+        } else if (weight >= 45 && weight <= 70) {
+            results.innerHTML = 'You are at the appropriate weight';
+        } else {
+            results.innerHTML = 'Check with a specialist';
+        }
+    } 
+    else {
+        results.innerHTML = 'Age group not defined';
+    }
+}
+
+
+    </script>
+</body>
+</html>

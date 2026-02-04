@@ -1,0 +1,35 @@
+{
+	"folders": [
+		{
+			"path": "../../../web development"
+		},
+		{
+			"path": "../../../web development/css"
+		},
+		{
+			"path": "../../../sqi html lvl 1"
+		},
+		{
+			"path": "../../../../Documents/credpal"
+		},
+		{
+			"path": "../../../portfolio"
+		},
+		{
+			"path": "../../../levelone project"
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../portfolio  2"
+		},
+		{
+			"path": "../../../schol"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "portfolio",
+		"liveServer.settings.port": 5501
+	}
+}

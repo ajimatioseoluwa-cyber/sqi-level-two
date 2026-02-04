@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="justify-self: center; border: 1px solid black;" class="">
+        <input type="text" id="userInput" placeholder="Enter your grocerie">
+        <button onclick="check()">availability</button>
+        <button onclick="checkInventory()">check inventory</button>
+        <button onclick="addFruit()">add</button>
+        <p id="results">results will shhow here...</p>
+    </div>
+    <script>
+        let savedData = localStorage.getItem("myInventory");
+        let inventory = savedData ? JSON.parse(savedData) : ["apple", "banana", "orange", "pineapple"];
+
+        function check(){
+            let fruit = document.getElementById('userInput').value
+            let theFruit = fruit.toLowerCase();
+            
+            if(inventory.includes(theFruit)) {
+                results.innerHTML = `we have ${theFruit} in stock`
+            } else {
+                results.innerHTML = `we dont have ${theFruit} in stock`
+            }
+            if(theFruit == ''){
+                results.innerHTML = `please Enter any of these fruits ${inventory}`
+            }
+        }
+        function checkInventory() {
+            // let inventory = ["apple", "banana", "orange", "pineapple", "watermelon"];
+            let results = document.getElementById('results');
+
+            results.innerHTML = "<p>Our Stock</p>"
+            let list = document.createElement('ul');
+            inventory.forEach(function(item) {
+                let itemList = document.createElement('li');
+                itemList.innerText = item;
+                list.appendChild(itemList);
+            });
+            results.appendChild(list)
+        }
+        function addFruit() {
+            // let inventory = ["apple", "banana", "orange", "pineapple", "watermelon"];
+            let newFruit = document.getElementById('userInput').value.toLowerCase();
+
+            if(newFruit !== ""){
+                inventory.push(newFruit);
+                results.innerHTML = `${newFruit} has been added to the shop`
+                localStorage.setItem("myInventory", JSON.stringify(inventory));
+            }
+        }
+    </script>
+</body>
+</html>

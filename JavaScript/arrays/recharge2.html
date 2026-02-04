@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <select name="" id="network">
+        <option value="MTN">MTN</option>
+        <option value="Airtel">Airtel</option>
+        <option value="Glo">Glo</option>
+        <option value="9Mobile">9mobile</option>
+    </select>
+
+    <select name="" id="amount">
+        <option value="100">N100</option>
+        <option value="200">N200</option>
+        <option value="500">N500</option>
+        <option value="1000">N1000</option>
+    </select>
+
+    <input type="number" id="howMany">
+
+    <button onclick="generateRecharge()">generate</button>
+    <p id="results"></p>
+    <script>
+        let pin = [];
+        let userInput = document.getElementById('howMany').value;
+        
+        function generateRecharge() { 
+            let network = document.getElementById('network').value;
+            let amount =  document.getElementById('amount').value;
+            let results = document.getElementById('results');
+            
+            const randomNumber = Math.floor(Math.random()*10000000000000000);            
+            
+            let cardObject = {
+                cardNet: network,
+                cardAmt: amount,
+                cardPin: randomNumber
+            };
+
+            pin.push(cardObject)
+            
+            
+            results.innerHTML = ''
+            for (let i=0; i < pin.length; i++) {
+                results.innerHTML += `
+                <div class="p-2 border mb-2 shadow-sm rounded bg-white">
+                <strong>${pin[i].cardNet}</strong> - N${pin[i].cardAmt} <br>
+                <span class="text-primary fw-bold">${pin[i].cardPin}</span>
+                </div>`;
+            }
+            
+        }
+            
+
+    </script>
+</body>
+</html>

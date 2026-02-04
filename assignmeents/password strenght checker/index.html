@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="invalid"></p>
+    <input type="password" name="" id="userInput" placeholder="Enter password">
+    <button onclick="check()">check</button>
+    <p id="results"></p>
+    <script>
+        // function check() {
+        //     const password = document.getElementById('userInput').value
+        //     console.log(password);
+        //     if(password == ''){
+        //         invalid.innerHTML = ''
+        //         invalid.innerHTML = '<p style="color: #00f">please enter password</p>'  
+        //     }
+        //     if(password.length < 8){
+        //         invalid.innerHTML = ''
+        //         invalid.innerHTML = '<p style="color: #f00">password must be at least 8 characters</p>'
+        //     }
+        //     let pass;
+        //     if(password >= 'A' && password <= 'Z'){
+        //         pass = upperCase;
+        //     }else if(password >= 'a' && password <= 'z'){
+        //         pass = lowerCase
+        //     }else if (password >= '0' && password <= '9'){
+        //         pass = digit
+        //     }
+        //     if( userInput.value == upperCase && userInput.value == lowerCase && userInput.value == digit) {
+        //         results.innerHTML = ''
+        //         results.innerHTML = '<p>password is very strong</p>'
+        //     }else if(upperCase && lowerCase) {
+        //         results.innerHTML = ''
+        //         results.innerHTML = '<p>password is at medium strenght</p>' 
+        //     }else if(upperCase) {
+        //         results.innerHTML = ''
+        //         results.innerHTML = '<p>password is very weak</p>'
+        //     }else if(lowerCase) {
+        //         results.innerHTML = ''
+        //         results.innerHTML = '<p>password is very weak</p>'
+        //     }else if(digit) {
+        //         results.innerHTML = ''
+        //         results.innerHTML = '<p>password is very weak</p>'
+        //     }
+        // }
+        function check() {
+    const password = document.getElementById('userInput').value;
+    const invalid = document.getElementById('invalid');
+    const results = document.getElementById('results');
+
+    // Clear previous messages
+    invalid.innerHTML = '';
+    results.innerHTML = '';
+
+    // 1. Basic Validation
+    if (password === '') {
+        invalid.innerHTML = '<p style="color: blue">Please enter a password</p>';
+        return; // Stop execution
+    }
+
+    if (password.length < 8) {
+        invalid.innerHTML = '<p style="color: red">Password must be at least 8 characters</p>';
+    }
+
+    // 2. Strength Checks (using Regular Expressions)
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasLowerCase = /[a-z]/.test(password);
+    const hasDigit = /[0-9]/.test(password);
+    const hasSpecial = /[!@#$%^&*]/.test(password);
+
+    // 3. Determine Strength
+    let strength = 0;
+    if (hasUpperCase) strength++;
+    if (hasLowerCase) strength++;
+    if (hasDigit) strength++;
+    if (hasSpecial) strength++;
+
+    // 4. Display Results
+    if (strength === 4 && password.length >= 8) {
+        results.innerHTML = '<p style="color: green">Strength: Very Strong</p>';
+    } else if (strength >= 2) {
+        results.innerHTML = '<p style="color: orange">Strength: Medium</p>';
+    } else {
+        results.innerHTML = '<p style="color: red">Strength: Weak</p>';
+    }
+}
+    </script>
+</body>
+</html>

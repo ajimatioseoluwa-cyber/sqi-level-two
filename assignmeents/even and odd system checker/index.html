@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="" style="justify-self: center; border: 1px solid black;">
+        <p>even or odd number checker</p>
+        <input type="number" placeholder="Enter desired number" id="userInput">
+        <button onclick="check()">check</button>
+        <p id="results">Results will show here...</p>
+    </div>
+    <script>
+        function check() {
+            let results = document.getElementById('results')
+            let number = Number(document.getElementById('userInput').value)
+            
+            if(number % 2 == 0){
+                results.innerHTML = `The number ${number} is an even number`
+            }else {
+                results.innerHTML = `The number ${number} is an odd number`
+            }
+            
+        }
+        
+    </script>
+</body>
+</html>

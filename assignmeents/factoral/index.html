@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="number" id="userInput">
+        <button id="factoral" onclick="factoral()">check</button>
+        <p id="results"></p>
+    </div>
+    <script>
+        function factoral() {
+            const user = Number(document.getElementById('userInput').value);
+            
+            if(user === "") {
+                results.innerHTML = 'please enter an actual number'
+            } else if (user < 0) {
+                results.innerHTML = '<p> please give a valid input</p>'
+            } else if (user === 0 || user === 1) {
+                results.innerHTML = '<p>The answer is 1</p>'
+            }
+            let result = 1;
+            for(i=2; i<=user; i++){
+                result = result * i;
+            }
+            results.innerHTML = `The answer is <b>${result}</b>`
+        }
+    </script>
+</body>
+</html>

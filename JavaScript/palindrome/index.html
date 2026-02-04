@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="showError" style="display: none;">please fill in the desired word</div>
+    <input type="text" id="userInput" placeholder="put desired word">
+    <button id="btn">check</button>
+    <div id="show">results will show here
+    </div>
+    <script>
+        const btnCheck = document.getElementById('btn')
+        btnCheck.addEventListener('click', () =>{
+            if(userInput.value == ''){
+                showError.style.display = 'block'
+                show.innerHTML = `<div>results will show here...</div>`
+            } else {
+                showError.style.display = 'none'
+                // show.style.display = 'block'
+                const convertedWord = (userInput.value.toLowerCase())
+                const reversedWord = convertedWord.split('').reverse('').join('')
+                console.log(reversedWord);
+                if(convertedWord == reversedWord) {
+                    show.innerHTML = ''
+                    show.innerHTML = `<p style="color: #00f;">${convertedWord} is a palindrome</p>`
+                }else {
+                    show.innerHTML = ''
+                    show.innerHTML = `<p style="color: #f00;">${convertedWord} is not a palindrome</p>`
+                }
+                userInput.value = ''
+            }
+        })
+    </script>
+</body>
+</html>
