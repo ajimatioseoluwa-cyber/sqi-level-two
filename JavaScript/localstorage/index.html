@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<span id="display"></span>
+    <script>
+        // localStorage - temporary storage system
+        // setItem, getItem, removeItem
+
+        // const user = "janet Olawale"
+
+        // localStorage.setItem('name', user)
+
+        const display = document.getElementById('display');
+        display.innerHTML = localStorage.getItem('name')
+
+        const items = ['book', 'projector','journal', 'baby'];
+        localStorage.setItem('some', JSON.stringify(items)); // JSON.Stringify will return an array asd a string 
+        console.log(JSON.parse(localStorage.getItem('some'))); // JSON.parse will return string as an array
+        
+    </script>
+</body>
+</html>

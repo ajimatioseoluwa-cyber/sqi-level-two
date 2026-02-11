@@ -1,0 +1,123 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+            <span class="label">First name</span>
+            <input type="text" name="" id="nameInput">
+        </div>
+        <div class="">
+            <span>last name</span>
+            <input type="text" id="lastnameInput">
+        </div>
+        <div>
+            <span>E-mail address</span>
+            <input type="email" name="" id="emailInput">
+        </div>
+        <div>
+            <p id="matric" class="border-3 rounded-3 bg-secondary"></p>
+            <button onclick="generate()">generate</button>
+        </div>
+
+        <select name="" id="courses">
+            <option value="JS">JavaScript</option>
+            <option value="FB">FireBase</option>
+            <option value="VCS">Version control systems</option>
+        </select>
+
+        <select name="" id="gender">
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select>
+        <button class="btn btn-dark btn-lg" onclick="sub()">Submit</button>
+
+        <table class="table" id="studTable">
+            <tr>
+                <th>S/N</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>matric</th>
+                <th>courses</th>
+                <th>gender</th>
+                <th>delete</th>
+            </tr>
+        </table>
+
+        <script>
+            let identity = [];
+            // let firstName = document.getElementById('nameInput').value;
+            // let lastName = document.getElementById('lastnameInput').value;
+            // let email = document.getElementById('emailInput').value;
+            // let courses = document.getElementById('courses').value;
+            // let gender = document.getElementById('gender').value;
+            
+            function generate() {
+                const matric_no = Math.floor(Math.random()*10000);
+                matric.innerHTML = ``
+                matric.innerHTML = `26${matric_no}`
+            }
+            function sub(val) {
+                let lastName = document.getElementById('lastnameInput').value;
+                let email = document.getElementById('emailInput').value;
+                let courses = document.getElementById('courses').value;
+                let gender = document.getElementById('gender').value;
+                let firstName = document.getElementById('nameInput').value;
+                let currentMatric = document.getElementById('matric').innerText;
+
+                let student_identity = {
+                    studName: firstName + " " + lastName, 
+                    studEmail: email,
+                    studMatric:currentMatric,
+                    studCourses: courses,
+                    studGender: gender
+                }
+                
+                identity.push(student_identity)
+                localStorage.setItem('studdets', JSON.stringify(identity))
+                studTable.innerHTML += `<tr>
+                    <td>${identity.length}</td>
+                    <td>${student_identity.studName}</td>
+                    <td>${student_identity.studEmail}</td>  
+                    <td>${student_identity.studMatric}</td>
+                    <td>${student_identity.studCourses}</td>    
+                    <td>${student_identity.studGender}</td>
+                    <td><button onclick="deleteRow(${identity.length - 1})">del</button></td>       
+                </tr>`
+            }
+               function deleteRow(val) {
+                identity.splice(val, 1)
+                localStorage.setItem('studdets', JSON.stringify(identity))
+                
+                // Rebuild the entire table
+                studTable.innerHTML = `<tr>
+                    <th>S/N</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>matric</th>
+                    <th>courses</th>
+                    <th>gender</th>
+                    <th>delete</th>
+                </tr>`
+                
+                identity.forEach((student, index) => {
+                    studTable.innerHTML += `<tr>
+                        <td>${index + 1}</td>
+                        <td>${student.studName}</td>
+                        <td>${student.studEmail}</td>  
+                        <td>${student.studMatric}</td>
+                        <td>${student.studCourses}</td>    
+                        <td>${student.studGender}</td>
+                        <td><button onclick="deleteRow(${index})">del</button></td>       
+                    </tr>`
+                })
+            }
+
+                
+        </script>
+    </body>
+    </html>
