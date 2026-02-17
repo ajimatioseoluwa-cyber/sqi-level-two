@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const statement = "good morning. Welcome to class"
+        const regex = /top/
+
+        console.log(regex.test(statement));
+
+        //validate input - phone number validation 
+        //Digits/numbers
+
+        const phone_number = "09067776799";
+        const digitCheck = /^[+]+\d{11}/
+
+        if (digitCheck.test(phone_number)){
+            console.log('phone number is valid');
+        } else {
+            console.log("invalid phone number");
+        }
+
+        // {} - length
+
+        //password - length, uppercase, lowercase, special characters
+        
+        const password = "Boluwade1@";
+        // const passwordCheck = /\w+[!@#$%%^&*(.,/~`";;:|")]+[^\s]{8}/;
+        const passwordCheck = /[\w][!@#$%^&*()]/
+
+        if (passwordCheck.test(password)){
+            console.log('password is correct');
+            
+        } else {
+            console.log("invalid password");
+            
+        }
+    </script>
+</body>
+</html>

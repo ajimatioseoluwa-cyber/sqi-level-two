@@ -23,13 +23,17 @@
         <span>Product Description</span>
         <input type="text" class="form-control" placeholder="Enter Product Description" id="description">
     </div>
-    <button class="btn btn-dark" onclick="addProduct()">Add product</button>
+    <div>
+        <span>search for product</span>
+        <input type="text" placeholder="search" onkeyup="searchProduct(event)">
+    </div>
+    <button class="btn btn-dark" id="btn1" onclick="addProduct()">Add product</button>
     <!-- <button class="btn btn-light" onclick="deleteFunction(val)"><img src="material-symbols--delete.svg" alt=""></button> -->
     </div>
     <div id="productsDiv" class="mx-2 my-4 row d-flex gap-3 justify-content-center"></div>
-
     <script>
         const products = JSON.parse(localStorage.getItem('products'));
+        let found = {};
         //  [
         // {id: 1, name: 'T-shirt', price: 40000, description:'the best t-shirt ever'
         //     },
@@ -43,6 +47,7 @@
         
         //.some checks if item already exists, using a unique entity
         
+        
         const id = products.length > 0 ? products[products.length - 1].id : 0;  
         console.log(id);
         
@@ -52,41 +57,60 @@
             productsDiv.innerHTML = '';
             for (let i = 0; i < products.length; i++) {
                 productsDiv.innerHTML += `<div class='card p-1 col-md-3 rounded-2'>
-                    <p class="fw-medium fs-5">${products[i].name}</p>
-                    <span class="text-sm text-secondary-subtle d-block">${products[i].description}</span>
-                    <span class="text-sm fw-medium d-block">${products[i].price}</span>
-
-                    <div class ="d-flex justify-content-between">
-                <button class="btn btn-dark w-75">Add to cart</button>
-                <button class="btn btn-dark" onclick="deleteFunction(${i})"><img src="material-symbols--delete.svg" alt=""></button>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p class="fw-medium fs-5">${products[i].name}</p>
+                        <img src="tabler--edit.svg" alt="" style="cursor: pointer;" onclick="editProducts(${i})">
                         </div>
-                    </div>`
-            }
-        }
+                        <span class="text-sm text-secondary-subtle d-block">${products[i].description}</span>
+                        <span class="text-sm fw-medium d-block">${products[i].price}</span>
+                        
+                        <div class ="d-flex justify-content-between">
+                            <button class="btn btn-dark w-75">Add to cart</button>
+                            <button class="btn btn-dark" onclick="deleteFunction(${i})"><img src="material-symbols--delete.svg" alt=""></button>
+                            </div>
+                            </div>`
+                        }
+                    }
+                    displayProducts()
+                    
+                    
+                    function addProduct() {
+                        const name = product_name.value;
+                        const product_price = price.value;
+                        const Product_description = description.value;
+                        
+                        
+                        // const students = ['Tolu', 'Kunle', 'sayo'];
+                        // students.some((i)  => console.log(i))
+                        
+                        
+                    
+                        
+                        const btn1 = document.getElementById('btn1')
+                        if (btn1.innerText === 'Add product') {  
+                            // const id = products.length > 0 ? products[products.length - 1].id : 0;  
 
-        displayProducts()
+                            const item = {id: id + 1, name:name, price: product_price, description: Product_description }
+                            
+                            products.push(item)
+                            localStorage.setItem('products', JSON.stringify(products)); 
+                        } else {
+                            found.name = name;
+                            found.price = product_price;
+                            found.description = Product_description;
+                            console.log(found);
+                            
+                            localStorage.setItem('products', JSON.stringify(products)); 
 
-        function addProduct() {
-            const name = product_name.value;
-            const product_price = price.value;
-            const Product_description = description.value;
-            
-            
-            const students = ['Tolu', 'Kunle', 'sayo'];
-            students.some((i)  => console.log(i))
+                            //reseting to initial state
+                            btn1.innerHTML = 'Add product'
+                            product_name.value = ''
+                            price.value = ''
+                            description.value = ''
+                            
+                        }
 
 
-
-
-
-
-
-
-
-            const item = {id: id + 1, name: name, price: product_price, description: Product_description }
-            
-            products.push(item)
-            localStorage.setItem('products', JSON.stringify(products)); 
             productsDiv.innerHTML = '';
             displayProducts()
 
@@ -101,6 +125,40 @@
             localStorage.setItem('products', JSON.stringify(products));
 
         }
+        // find is used when you only want to return a single value
+        // filter is used whrn you wangt to return all values
+        const searchProduct = (e) => {
+            const searchInput = e.target.value;
+            const searchResults = products.filter((prd) => prd.name.toLowerCase().includes(searchInput.toLowerCase()));
+            // console.log(searchResults);
+            productsDiv.innerHTML = '';
+            for (i = 0; i < searchResults.length; i++) {
+                 productsDiv.innerHTML += `<div class='card p-1 col-md-3 rounded-2'>
+                    <p class="fw-medium fs-5">${searchResults[i].name}</p>
+                    <span class="text-sm text-secondary-subtle d-block">${searchResults[i].description}</span>
+                    <span class="text-sm fw-medium d-block">${searchResults[i].price}</span>
+
+                    <div class ="d-flex justify-content-between">
+                <button class="btn btn-dark w-75">Add to cart</button>
+                <button class="btn btn-dark" onclick="deleteFunction(${i})"><img src="material-symbols--delete.svg" alt=""></button>
+                        </div>
+                    </div>`
+            }
+
+            
+            
+        }
+
+        const editProducts = (i) => {
+            found = products.find((prd, index) => index === i);
+            console.log(found);
+            product_name.value = found.name;
+            price.value = found.price;
+            description.value = found.description; 
+            
+            document.getElementById('btn1').innerText = 'Edit products'
+        }
+        
     </script>
 
     <!-- studzent registration page - first name, lastname, email address, matricnumber(auto generated), courses, gender(male & female). Display the information using a table. Add delete feature
