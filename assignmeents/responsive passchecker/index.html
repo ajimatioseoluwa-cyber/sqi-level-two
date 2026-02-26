@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+</head>
+<body>
+    <h4>password</h4>
+    <input type="text" class="form-control w-25" id="userInput" onkeyup="checkPassword(event)">
+    <div id="password" style="justify-content: center; display: none;" class="p-3">
+    <p id="length">at least 8 characters</p>
+    <p id="upperLower">contains uppercase and lowercase letters</p>
+    <p id="number">contains atleast one number</p>
+    <p id="specialChars">contains special characters</p>
+</div>
+
+<script>
+        const space = () => {
+            let userInput = document.getElementById('userInput').value;
+            let number = document.getElementById('number')
+                const passwordCheck = /\d/
+
+                if(passwordCheck.test(userInput)) {
+                    number.innerHTML = '<p class="text-success">contains atleast one number</p>'
+                } else {
+                    number.innerHTML = '<p class="text-danger">contains atleast one number</p>'
+                }
+            }
+        const digits = () => {
+        let userInput = document.getElementById('userInput').value;
+        let sensitive = document.getElementById('upperLower');
+            // const passwordCheck = /[a-z A-Z]/
+            const passwordCheck = /^(?=.*[a-z])(?=.*[A-Z]).+$/
+            if(passwordCheck.test(userInput)) {
+                sensitive.innerHTML = '<p class="text-success">contains uppercase and lowercase letters</p>'
+
+            } else {
+                sensitive.innerHTML= '<p class="text-danger">contains uppercase and lowercase letters</p>'
+
+            }
+        }
+       
+        const characters = () => {
+        let userInput = document.getElementById('userInput').value;
+        let special = document.getElementById('specialChars');
+            // const passwordCheck = /[_]/
+            const password = /[!@#$%^&*)(]/
+
+          if (password.test(userInput)){
+                special.innerHTML = '<p class="text-success">contains special characters</p>'  
+        }else {
+                special.innerHTML = '<p class="text-danger">contains special characters</p>'  
+            
+        }
+        }
+        const passLength = () => {
+        let userInput = document.getElementById('userInput').value;
+        let length = document.getElementById('length');
+            const passwordCheck = /.{8,}/
+            if(passwordCheck.test(userInput)) {
+                length.innerHTML = '<p class="text-success">at least 8 characters</p>'  
+            }else {
+                length.innerHTML = '<p class="text-danger">at least 8 characters</p>'
+                
+            }
+        }
+        const checkPassword = (e) => {
+            password.style.display = 'block'
+            passLength()
+            characters()
+            digits()
+            space()
+        console.log(e);
+        
+        
+    }
+</script>
+</body>
+</html>

@@ -29,17 +29,19 @@
 
         //password - length, uppercase, lowercase, special characters
         
+        //?= : represents look ahead
+        //.* : reresents any character
         const password = "Boluwade1@";
         // const passwordCheck = /\w+[!@#$%%^&*(.,/~`";;:|")]+[^\s]{8}/;
-        const passwordCheck = /[\w][!@#$%^&*()]/
+        const passwordCheck = /(?=.*[A-Z])/
 
         if (passwordCheck.test(password)){
             console.log('password is correct');
             
         } else {
             console.log("invalid password");
-            
         }
+        
     </script>
 </body>
 </html>

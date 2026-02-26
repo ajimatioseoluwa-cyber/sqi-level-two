@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <style>
+        #option:hover{
+            transform: translateY(-5px);
+            transition: ease;
+            /* transform: scale(1.2); */
+            transition-duration: 0.5s; 
+        }
+        #option{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="activated"  class="flex-column justify-content-center align-items-center shadow-lg border border-3 border-black w-50 mt-5" style=" justify-self: center; padding-bottom: 100px; display: flex;">
+        <h3 class="bg-dark text-light w-100 shadow text-center">Validation Checker <h3 class="badge text-light bg-success">online</h3>
+        <p class="spinner-grow mt-5"></p>
+        <p>click the button below to activate validator</p>
+        <button onclick="activate()" class="w-25 rounded-circle btn-outline-danger" style="height: 100px;">activate</button>
+    </div>
+
+    <div id="activatee" style="display: none;">
+
+        <div class="d-flex flex-column justify-content-center align-items-center shadow-lg border border-3 border-black w-50 mt-5" style=" justify-self: center;">
+        <h3 class="bg-dark text-light w-100 shadow text-center">Validation Checker <h3 class="badge text-light bg-success">online</h3>
+        <input type="text" id="userInput" class="form-control w-50 mt-5">
+        <p id="results" class="alert alert-danger">results will show here</p>
+        <button id="option" onclick="space()" class="btn btn-outline-dark rounded-pill">space check</button>   
+        <button id="option" onclick="digits()" class="btn btn-outline-danger rounded-pill">digit check</button>
+        <button id="option" onclick="digitNum()" class="btn btn-outline-success rounded-pill">digits and letters check</button>
+        <button id="option" onclick="hyphen()" class="btn btn-outline-warning rounded-pill" >hyphen and underscore check</button>
+        <button id="option" onclick="length()" class="btn btn-outline-secondary rounded-pill">length check</button>
+    </div>
+    </div>
+    <script>
+        let userInput = document.getElementById('userInput').value;
+        let answer = document.getElementById('results');
+        const activate = () => {
+            activatee.style.display = 'block'
+            activated.style.display = 'none'
+            // activated.innerHTML = ''
+
+        }
+        const space = () => {
+        let userInput = document.getElementById('userInput').value;
+
+            const passwordCheck = /\s/
+
+            if(passwordCheck.test(userInput)) {
+                answer.innerText = 'your password has a space'
+            } else {
+                answer.innerText = ''
+            }
+        }
+        const digits = () => {
+        let userInput = document.getElementById('userInput').value;
+            const passwordCheck = /[a-z A-Z]/
+            if(passwordCheck.test(userInput)) {
+                answer.innerText = 'your password has digits'
+
+            } else {
+                answer.innerText = 'Your password does not have digits'
+            }
+        }
+        const digitNum = () => {
+        let userInput = document.getElementById('userInput').value;
+            const passwordCheck = /[a-z A-Z]/
+            const password = /\d/
+
+        if (passwordCheck.test(userInput) && password.test(userInput)){
+            answer.innerText = 'your password has number and letters'
+            
+        }else if (password.test(userInput)){
+            answer.innerText = 'your password has number'
+        }else if(passwordCheck.test(userInput)) {
+            answer.innerText = 'your password has letters'
+        }else {
+            answer.innerText = 'your password does not have number or letters'
+        }
+        }
+        const hyphen = () => {
+        let userInput = document.getElementById('userInput').value;
+            const passwordCheck = /[_]/
+            const password = /[-]/
+
+         if (passwordCheck.test(userInput) && password.test(userInput)){
+            answer.innerText = 'your password has underscores and hyphens'
+            
+        }else if (password.test(userInput)){
+            answer.innerText = 'your password has hyphens'
+        }else if(passwordCheck.test(userInput)) {
+            answer.innerText = 'your password has underscores'
+        }else {
+            answer.innerText = 'your password does not have underscores or hyphens'
+        }
+        }
+        const length = () => {
+        let userInput = document.getElementById('userInput').value;
+            const passwordCheck = /.{6,8}$/
+            if(passwordCheck.test(userInput)) {
+                answer.innerText = 'your password is at appropraite length'
+            }else {
+                answer.innerText = 'your password is recommended to be between 6-8 characters'
+            }
+        }
+    </script>
+</body>
+</html>

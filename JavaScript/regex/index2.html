@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="timer"></p>
+    <script>
+        console.log("i am output 1");
+        
+        setTimeout(() => {
+            console.log("timer");
+            
+        }, 5000)
+
+
+        setInterval(() => {
+        const now = new Date
+
+        const hour = now.getHours()
+        const minute = now.getMinutes()
+        const seconds = now.getSeconds()
+        const timer = document.getElementById('timer');
+            // timer.innerHTML = hour + ":" + minute + ":" + seconds;
+        // timer.innerHTML=now.toLocaleTimeString()
+        timer.innerHTML=now.toLocaleDateString()    
+        }, 100);
+
+        let count = 30;
+
+        setInterval(() => {
+            if(count >= 0){
+                console.log(count--);
+                
+            }
+        }, 1000)
+    </script>
+</body>
+</html>

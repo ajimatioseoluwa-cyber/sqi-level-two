@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Site</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  </head>
+<body>
+    <div class="card p-5" style="justify-self: center; text-align: center; margin-top: 100px;">
+        <h1 style="padding-bottom: 30px;">FORM</h1>
+        <h5>Full name</h5>
+        <input type="text" id="nameInput" value="" onkeyup="nameAction(event)" class="rounded-pill form-control">
+        <div style="display: none;" id="fullName">
+            <p id="namespace">space between name</p>
+            <p id="nameLength">name must be atleast 5 letters</p>
+            <p id="no-numba">numbers is not allowed</p>
+        </div>
+        <h5>email address</h5>
+        <input type="text" id="emailInput" onkeyup="emailAction(event)" class="rounded-pill form-control">
+        <div class="" id="mailMail" style="display: none;">
+            <p id="emailat">must have @</p>
+            <p id="emaildot">must have .</p>
+        </div>
+        <h5>phone number</h5>
+        <input type="text" id="numberInput" onkeyup="numberAction(event)" class="rounded-pill form-control">
+        <div class="" id="phone" style="display: none;">
+            <p id="numLength">at least 11 numbers</p>
+            <p id="numCode">add country code</p>
+            <p id="no_letter">no letters in this field</p>
+        </div>
+        <h5>password</h5>
+        <input type="text" class="form-control rounded-pill" id="userInput" onkeyup="checkPassword(event)">
+        <div id="password" style="justify-content: center; display: none;" class="p-3">
+        <p id="length">at least 8 characters</p>
+        <p id="upperLower">contains uppercase and lowercase letters</p>
+        <p id="number">contains atleast one number</p>
+        <p id="specialChars">contains special characters</p>
+        </div>
+    </div>
+
+
+    <script>
+            const time = () => {
+        let userInput = document.getElementById('nameInput').value;
+        let namespace = document.getElementById('namespace')
+            const passwordCheck = /\s/
+
+            if(passwordCheck.test(userInput)) {
+                namespace.innerHTML = '<p class="text-success">space between name</p>'
+            } else {
+                namespace.innerHTML = '<p class="text-danger">space between name</p>'
+            }
+        }
+        const atLeastFive = () => {
+            let userInput = document.getElementById('nameInput').value;
+            let nameLength = document.getElementById('nameLength');
+
+            const passwordCheck = /.{5,}/
+            if(passwordCheck.test(userInput)) {
+                nameLength.innerHTML = '<p class="text-success">contains atleast 5 letters</p>'
+            } else {
+                nameLength.innerHTML = '<p class="text-danger">contains atleast 5 letters</p>'
+            }
+        }
+        const notspace = () => {
+            let userInput = document.getElementById('nameInput').value;
+            let nonomba = document.getElementById('no-numba');
+
+            const passwordCheck = /(?=.*[\D])/
+            if(passwordCheck.test(userInput)) {
+                nonomba.innerHTML = '<p class="text-success">contains no numbers</p>'
+            } else {
+                nonomba.innerHTML = '<p class="text-danger">contains no numbers</p>'
+            }
+        }
+        const atMail = () => {
+            let userInput = document.getElementById('emailInput').value;
+            let emailat = document.getElementById('emailat');
+
+            const passwordCheck = /[@]/
+            if(passwordCheck.test(userInput)) {
+                emailat.innerHTML = '<p class="text-success">contains @</p>'
+            } else {
+                emailat.innerHTML = '<p class="text-danger">contains @</p>'
+            }
+        }
+        const dotMail = () => {
+            let userInput = document.getElementById('emailInput').value;
+            let emaildot = document.getElementById('emaildot');
+
+            const passwordCheck = /[.]/
+            if(passwordCheck.test(userInput)) {
+                emaildot.innerHTML = '<p class="text-success">contains .</p>'
+            } else {
+                emaildot.innerHTML = '<p class="text-danger">contains .</p>'
+            }
+        }
+        const atleastEleven = () => {
+             let userInput = document.getElementById('numberInput').value;
+            let numLength = document.getElementById('numLength');
+
+            const passwordCheck = /.{11,}/
+            if(passwordCheck.test(userInput)) {
+                numLength.innerHTML = '<p class="text-success">atleast 11 numbers</p>'
+            } else {
+                numLength.innerHTML = '<p class="text-danger">atleast 11 numbers</p>'
+            }
+        }
+        const code = () => {
+             let userInput = document.getElementById('numberInput').value;
+            let numcode = document.getElementById('numCode');
+
+            let passwordCheck = /^\+[1-9][0-9]{0,15}$/;
+            if(passwordCheck.test(userInput)) {
+                numcode.innerHTML = '<p class="text-success">add country code</p>'
+            } else {
+                numcode.innerHTML = '<p class="text-danger">add country code</p>'
+            }
+        }
+        const noletter = () => {
+            let userInput = document.getElementById('numberInput').value;
+            let letter = document.getElementById('no_letter');
+
+            const passwordCheck = /[^ a-z A-Z]/
+            if(passwordCheck.test(userInput)) {
+                letter.innerHTML = '<p class="text-success">no letters in this field</p>'
+            } else {
+                letter.innerHTML = '<p class="text-danger">no letters in this field<p>'
+            }
+        }
+        const space = () => {
+            let userInput = document.getElementById('userInput').value;
+            let number = document.getElementById('number')
+                const passwordCheck = /\d/
+
+                if(passwordCheck.test(userInput)) {
+                    number.innerHTML = '<p class="text-success">contains atleast one number</p>'
+                } else {
+                    number.innerHTML = '<p class="text-danger">contains atleast one number</p>'
+                }
+            }
+        const digits = () => {
+        let userInput = document.getElementById('userInput').value;
+        let sensitive = document.getElementById('upperLower');
+            // const passwordCheck = /[a-z A-Z]/
+            const passwordCheck = /^(?=.*[a-z])(?=.*[A-Z]).+$/
+            if(passwordCheck.test(userInput)) {
+                sensitive.innerHTML = '<p class="text-success">contains uppercase and lowercase letters</p>'
+
+            } else {
+                sensitive.innerHTML= '<p class="text-danger">contains uppercase and lowercase letters</p>'
+
+            }
+        }
+       
+        const characters = () => {
+        let userInput = document.getElementById('userInput').value;
+        let special = document.getElementById('specialChars');
+            // const passwordCheck = /[_]/
+            const password = /[!@#$%^&*)(]/
+
+          if (password.test(userInput)){
+                special.innerHTML = '<p class="text-success">contains special characters</p>'  
+        }else {
+                special.innerHTML = '<p class="text-danger">contains special characters</p>'  
+            
+        }
+        }
+        const passLength = () => {
+        let userInput = document.getElementById('userInput').value;
+        let length = document.getElementById('length');
+            const passwordCheck = /.{8,}/
+            if(passwordCheck.test(userInput)) {
+                length.innerHTML = '<p class="text-success">at least 8 characters</p>'  
+            }else {
+                length.innerHTML = '<p class="text-danger">at least 8 characters</p>'
+                
+            }
+        }
+        
+        const nameAction = (e) => {
+            // console.log(e);
+            let fullname = document.getElementById('fullName');
+            fullname.style.display = 'block'
+            let mail = document.getElementById('mailMail');
+            mail.style.display = 'none  ';
+            let phone = document.getElementById('phone');
+            phone.style.display = 'none';
+            time()
+            atLeastFive()
+            notspace()
+        }
+        
+        const emailAction = (f) => {
+            console.log(f);
+            let mail = document.getElementById('mailMail');
+            mail.style.display = 'block';
+            let fullname = document.getElementById('fullName');
+            fullname.style.display = 'none';
+            let phone = document.getElementById('phone');
+            phone.style.display = 'none';
+            atMail()
+            dotMail()
+        }
+        const numberAction = (g) => {
+            let mail = document.getElementById('mailMail');
+            mail.style.display = 'none';
+            let fullname = document.getElementById('fullName');
+            fullname.style.display = 'none';
+            
+            let phone = document.getElementById('phone');
+            phone.style.display = 'block';
+            
+            atleastEleven()
+            code()
+            noletter()
+        }
+        const checkPassword = (e) => {
+            let mail = document.getElementById('mailMail');
+            mail.style.display = 'none';
+            let fullname = document.getElementById('fullName');
+            fullname.style.display = 'none';
+            
+            let phone = document.getElementById('phone');
+            phone.style.display = 'none';
+            let password = document.getElementById('password')
+            password.style.display = 'block'
+            passLength()
+            characters()
+            digits()
+            space()
+        console.log(e);
+        
+        
+    }
+        </script>
+</body>
+</html>
