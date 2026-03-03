@@ -1,0 +1,5 @@
+CMS,Best For...
+WordPress,"The ""king"" of CMS; great for blogs, business sites, and versatility."
+Shopify,Purpose-built for e-commerce and online stores.
+Drupal / Joomla,Advanced users who need complex data organization and high security.
+Wix / Squarespace,"Beginners who want a ""drag-and-drop"" visual builder experience."

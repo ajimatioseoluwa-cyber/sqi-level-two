@@ -3,9 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Oseoluwa's Kitchen</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            --nigerian-green: #008751;
+            --nigerian-green-dark: #00  7043;
+            --accent-orange: #ff4500;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fcfcfc;
+            color: #2d3436;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: white !important;
+            border-bottom: 1px solid #eee;
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            color: var(--nigerian-green) !important;
+            letter-spacing: -1px;
+        }
+
+        /* Filter Section */
+        .filter-bar {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin-top: -30px;
+            z-index: 10;
+            position: relative;
+        }
+
+        /* Food Card Styling */
+        .food-card {
+            border: none;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            background: white;
+        }
+
+        .food-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .card-img-container {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-img-top {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .badge-floating {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 2;
+        }
+
+        .price-tag {
+            font-weight: 700;
+            color: var(--nigerian-green);
+            font-size: 1.2rem;
+        }
+
+        .btn-fav {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+
+        /* Modal Customization */
+        .modal-content {
+            border-radius: 24px;
+            border: none;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+
+    <nav class="navbar navbar-expand-lg sticky-top py-3">
+        <div class="container">
+            <a class="navbar-brand fs-3" href="#">Ose's kitchen</a>
+            
+            <div class="d-flex align-items-center gap-3">
+                <button class="btn btn-outline-dark fw-600 rounded-pill px-4" id="viewFavorites">
+                    <i class="bi bi-heart-fill text-danger me-2"></i>Favorites (0)
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div>
+            <h1 class="display-4 fw-800">Taste Oseoluwa's cooking</h1>
+            <p class="lead">Explore over 30 authentic Nigerian delicacies</p>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="filter-bar p-4 border">
+            <div class="row g-3 align-items-end">
+                <div class="col-lg-4">
     
+    <label class="form-label small fw-bold text-uppercase opacity-50">Search Dishes</label>
+    <div class="input-group">
+        <span class="input-group-text bg-white border-end-0"><i class="bi bi-search"></i></span>
+        <input type="text" id="searchInput" class="form-control border-start-0 ps-0" oninput="handleFilters()" placeholder="e.g. Jollof Rice...">
+    </div>
+</div>
+
+<div class="col-md-2">
+    <label class="form-label small fw-bold text-uppercase opacity-50">Category</label>
+    <select id="categoryFilter" onchange="handleFilters()" class="form-select">
+        <option value="all" selected>All Foods</option>
+        <option value="Swallow">Swallow</option>
+        <option value="Soup">Soups</option>
+        <option value="Main Course">Rice Dishes</option>
+        <option value="Snack/Dessert">Dessert</option>
+        <option value="Snack/Street Food">Street Food</option>
+        <option value="Side Dish/Main">Side Dish</option>
+        <option value="Appetizer/Side Dish">Appetizer</option>
+        <option value="Breakfast/Snack">Breakfast Snack</option>
+        <option value="Side Dish/Snack">Side Snack</option>
+    </select>
+</div>
+
+<div class="col-md-2">
+    <label class="form-label small fw-bold text-uppercase opacity-50">Region</label>
+    <select id="regionFilter" onchange="handleFilters()" class="form-select">
+        <option value="all" selected>All Regions</option>
+        <option value="South-West Nigeria">Yoruba (West)</option>
+        <option value="South-East Nigeria">Igbo (East)</option>
+        <option value="Northern Nigeria">Hausa (North)</option>
+        <option value="South-South Nigeria">South South</option>
+    </select>
+</div>
+
+<div class="col-md-3 d-flex gap-3 pb-2">
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="vegFilter" onchange="handleFilters()">
+        <label class="form-check-label small fw-600" for="vegFilter">Vegetarian</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="spicyFilter" onchange="handleFilters()">
+        <label class="form-check-label small fw-600" for="spicyFilter">Spicy</label>
+    </div>
+</div>
+                <div class="col-md-1">
+                    <button class="btn btn-link text-danger text-decoration-none small p-0 fw-bold">Clear All</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="text-center my-5" id="loadingSpinner" style="display: none;">
+            <div class="spinner-border text-success" role="status"></div>
+            <p class="mt-2 fw-bold">Preparing the kitchen...</p>
+        </div>
+
+        <div class="row g-4" id="foodContainer"></div>
+        <div class="text-center py-5 d-none" id="emptyState">
+            <i class="bi bi-search fs-1 opacity-25"></i>
+            <h3 class="mt-3">No dishes found</h3>
+            <p class="text-muted">Try adjusting your filters or search terms.</p>
+            <button class="btn btn-outline-success rounded-pill">Reset All Filters</button>
+        </div>
+    </div>
+
+<div class="modal fade" id="foodDetailModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content overflow-hidden">
+                
+            </div>
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="app.js"></script>
+
 </body>
 </html>
