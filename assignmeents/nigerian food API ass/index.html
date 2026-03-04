@@ -116,11 +116,11 @@
 
     <nav class="navbar navbar-expand-lg sticky-top py-3">
         <div class="container">
-            <a class="navbar-brand fs-3" href="#">Ose's kitchen</a>
+            <a class="navbar-brand fs-3" href="index.html">Ose's kitchen</a>
             
             <div class="d-flex align-items-center gap-3">
-                <button class="btn btn-outline-dark fw-600 rounded-pill px-4" id="viewFavorites">
-                    <i class="bi bi-heart-fill text-danger me-2"></i>Favorites (0)
+                <button class="btn btn-outline-dark fw-600 rounded-pill px-4" id="viewFavorites" onclick="viewfav()">
+                    <img src="mdi--favourite.svg" class="me-2" alt="">Favorites (0)
                 </button>
             </div>
         </div>
@@ -160,7 +160,6 @@
         <option value="Side Dish/Snack">Side Snack</option>
     </select>
 </div>
-
 <div class="col-md-2">
     <label class="form-label small fw-bold text-uppercase opacity-50">Region</label>
     <select id="regionFilter" onchange="handleFilters()" class="form-select">
@@ -182,27 +181,18 @@
         <label class="form-check-label small fw-600" for="spicyFilter">Spicy</label>
     </div>
 </div>
-                <div class="col-md-1">
-                    <button class="btn btn-link text-danger text-decoration-none small p-0 fw-bold">Clear All</button>
-                </div>
             </div>
         </div>
     </div>
 
     <div class="container mb-5">
         <div class="text-center my-5" id="loadingSpinner" style="display: none;">
-            <div class="spinner-border text-success" role="status"></div>
+            <div class="spinner-border text-danger" role="status"></div>
             <p class="mt-2 fw-bold">Preparing the kitchen...</p>
         </div>
 
         <div class="row g-4" id="foodContainer"></div>
-        <div class="text-center py-5 d-none" id="emptyState">
-            <i class="bi bi-search fs-1 opacity-25"></i>
-            <h3 class="mt-3">No dishes found</h3>
-            <p class="text-muted">Try adjusting your filters or search terms.</p>
-            <button class="btn btn-outline-success rounded-pill">Reset All Filters</button>
-        </div>
-    </div>
+        
 
 <div class="modal fade" id="foodDetailModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">

@@ -32,19 +32,21 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
-  const provider = new GoogleAuthProvider();
+  // const provider = new GoogleAuthProvider();
 
-  const signG = () => {
-    signInWithPopup(auth, provider)
-    .then((result) => {
-      console.log(results);
-    })
-    .catch((error) => {
-      console.log(error);
-    })
-  }
-  window.signG = signG;
+  // const signG = () => {
+  //   signInWithPopup(auth, provider)
+  //   .then((result) => {
+  //     console.log(results);
+  //   })
+  //   .catch((error) => {
+  //     console.log(error);
+  //   })
+  // }
+  // window.signG = signG;
   // const analytics = getAnalytics(app);
+
+onAuthStateChanged(auth,  )
 </script>
 </body>
 </html>

@@ -12,7 +12,7 @@ let foodPicture = {
 
     "Suya": "https://media.istockphoto.com/id/1151916066/photo/nigerian-pepper-beef-suya-on-stakes-at-party.jpg?s=612x612&w=0&k=20&c=Vrd7BdX-rhUAHBkGjUKdecpK02O8X5L4kZCThLvPNJc=",
 
-    "Amala": "https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse3.explicit.bing.net%2Fth%2Fid%2FOIP.Ov39ajBrSh29YWErxhgExwHaHa%3Fpid%3DApi&sp=1772447312T11fe7ca398007b83a6fa51ea1dd92f6a9ebc5bde5bde65392e1bed357e621904",
+    "Amala": "https://media.istockphoto.com/id/1398349731/photo/served-amala-with-assorted-meat.jpg?s=612x612&w=0&k=20&c=eU5NvBEprvy-ZgRM3L_HNelHgpeC2CvhTDZqhZvQp8Y=",
 
     "Akara": "https://media.istockphoto.com/id/1008416572/photo/nigerian-bean-cake-in-plastic-bowl.jpg?s=612x612&w=0&k=20&c=XMS9OvAGlM2x-w-xKj5vzve8uPUKu4WA5EwSMkZmj3Y=",
 
@@ -22,17 +22,17 @@ let foodPicture = {
 
     "Efo Riro": "https://media.istockphoto.com/id/2151441775/photo/a-serving-of-efo-riro-being-served-at-a-party-for-guests.jpg?s=612x612&w=0&k=20&c=kq4evWMLrp2cxf1eG74tOOJb3ru5bJxMo-IQa3qfT-0=",
 
-    "Banga Soup": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800",
+    "Banga Soup": "https://thunderbayafricanrestaurant.ca/wp-content/uploads/2023/08/Banga-Soup-4-litres-1.jpeg ",
 
-    "Afang Soup": "https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?auto=format&fit=crop&w=800",
+    "Afang Soup": "https://sisijemimah.com/wp-content/uploads/2016/04/Afang-soup-14.jpg",
 
-    "Okra Soup": "https://images.unsplash.com/photo-1582878826629-29b7ad1ccd2d?auto=format&fit=crop&w=800",
+    "Okro Soup": "https://sisijemimah.com/wp-content/uploads/2015/10/DSC_2189-scaled.jpg",
 
     "Pepper Soup": "https://media.istockphoto.com/id/1087788114/photo/nigerian-goat-meat-pepper-soup-served-in-a-white-bowl.jpg?s=612x612&w=0&k=20&c=nWPgg4w9DdjUTtPOxfFd07_vq-EVIgPs7NTQJfV0J1c=",
 
-    "Tuwo Shinkafa": "https://images.unsplash.com/photo-1603048588665-791ca8aea617?auto=format&fit=crop&w=800",
+    "Tuwo Shinkafa": "https://eatwellabi.com/wp-content/uploads/2022/10/Jamaican-chicken-soup-and-tuwo-15.jpg",
 
-    "Puff Puff": "https://images.unsplash.com/photo-1581006528751-be456574944d?auto=format&fit=crop&w=800",
+    "Puff Puff": "https://media.istockphoto.com/id/2208478493/photo/bowl-overflowing-with-freshly-made-golden-brown-puff-puffs-boortsog-boorsok-copy-space.webp?s=1024x1024&w=is&k=20&c=hS4CwxH4BslGUZlhGIR2UAXv9iojzOo2zEKv6nKlBPg=",
 
     "Boli (Roasted Plantain)": "https://media.istockphoto.com/id/1410562741/photo/nigerian-roasted-plantains-boli-ready-to-eat.jpg?s=612x612&w=0&k=20&c=74Uafo31fs4X26RN8LRgy0DIhX-Hf6dgku224S5mn7A=",
 
@@ -40,27 +40,90 @@ let foodPicture = {
 
     "Asun": "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=800",
 
-    "Abacha": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800",
+    "Abacha (African Salad)": "https://meetingyoumagazine.com.ng/wp-content/uploads/2022/08/IMG-20220822-WA0030.jpg",
 
     "Ofada Rice": "https://media.istockphoto.com/id/964296304/photo/fish-with-tomato-sauce-with-rice.jpg?s=612x612&w=0&k=20&c=GWap71DgkxOtCm8GE61XvVs-Oj2Tm29TRm4m_kfHqDM=",
 
-    "Yam Porridge": "https://images.unsplash.com/photo-1598514983318-2f64f8f4796c?auto=format&fit=crop&w=800",
+    "Asaro (Yam Porridge)": "https://i.pinimg.com/originals/35/0b/ce/350bceb2a2b981870cec0b3ed9f101f4.jpg",
 
     "Catfish Pepper Soup": "https://images.unsplash.com/photo-1534940859016-d530846d19da?auto=format&fit=crop&w=800",
 
-    "Nkwobi": "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=800",
+    "Nkwobi": "https://fabwoman.ng/wp-content/uploads/2017/11/nkw.jpg",
 
     "Edikang Ikong":"https://media.istockphoto.com/id/1360632769/photo/nigerian-pounded-yam-served-with-afang-soup-ready-to-eat.jpg?s=612x612&w=0&k=20&c=UqA_3Xslpl_7sTj1zYmolDOl93eVdwPYvYbF1OIUqTU=",
 
-   
+    "Oha Soup":"https://proveg.org/ng/wp-content/uploads/sites/4/2024/04/Oha-soup-scaled-e1696234519954.jpg",
 
+    "Chin Chin":"https://kentetv.com/wp-content/uploads/2023/11/Chin_Chin-scaled.webp",
+
+    "Ewa Agoyin":"https://www.chefspencil.com/wp-content/uploads/Ewa-Agoyin-1.jpg",
+   
+    "Gizdodo":"https://www.mydiasporakitchen.com/wp-content/uploads/2020/11/img_7747.jpg",
+
+    "Masa":"https://www.seriouseats.com/thmb/wL-iTNLR9XNPMFsb465i98uSvR0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20221108-NigerianMasaMaureen-Celestine-2700-d06fd5ea0a9f4486af4bd555e5810aec.JPG",
+
+    "Ofensala (White Soup)":"https://i.ytimg.com/vi/3OCl7A9v-gs/maxresdefault.jpg",
+
+    "Dodo (Fried Plantain)":"https://fthmb.tqn.com/-Agfk_EB8t3TydL0kPfOO3TK0CY=/4500x3003/filters:fill(auto,1)/cuban-cuisine-deep-fried-ripe-plantains-500247892-582366c65f9b58d5b1f0be67.jpg",
+
+    "Miyan Kuka":"https://afrifoodnetwork.com/wp-content/uploads/2017/06/miyan-kuka.jpg",
+
+    "Yamarita (Egg-coated Yam)":"https://1qfoodplatter.com/wp-content/uploads/2016/01/Yamarita-6-1140x761.jpg"
 };
 
 const defaultImg = "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800";
 
-// let favorites = JSON.parse(localStorage.getItem('naijaFavs')) || [];
+let favorites = JSON.parse(localStorage.getItem('naijaFavs')) || [];
 
 
+
+// --- FAVOURITES HELPERS ---
+
+const updateNavCount = () => {
+    document.getElementById('viewFavorites').innerHTML = `
+        <img src="mdi--favourite.svg" class="me-2" alt="">Favorites (${favorites.length})
+    `;
+}
+
+const isFav = (foodId) => favorites.includes(String(foodId));
+
+const addFav = (foodId) => {
+    if (isFav(foodId)) {
+        favorites = favorites.filter(id => id !== String(foodId));
+    } else {
+        favorites.push(String(foodId));
+    }
+
+    localStorage.setItem('naijaFavs', JSON.stringify(favorites));
+    updateNavCount();
+
+    // Update just this card's heart icon without re-rendering everything
+    const btn = document.getElementById(`fav-btn-${foodId}`);
+    if (btn) {
+        btn.querySelector('img').src = isFav(foodId) ? "mdi--favourite.svg" : "mdi--favourite-border.svg";
+    }
+
+    // Update modal button text if modal is open for this food
+    const modalFavBtn = document.getElementById('modal-fav-btn');
+    if (modalFavBtn && modalFavBtn.dataset.id === String(foodId)) {
+        modalFavBtn.textContent = isFav(foodId) ? "Remove from Favorites" : "Add to Favorites";
+    }
+}
+
+const viewfav = () => {
+    const favFoods = allFoods.filter(food => isFav(food.id));
+    renderFoodCards(favFoods.length > 0 ? favFoods : allFoods);
+    if (favFoods.length === 0) {
+        document.getElementById('foodContainer').innerHTML = `
+            <div class="col-12 text-center py-5">
+                <h3>No favourites yet! Click the heart on a dish to save it.</h3>
+            </div>`;
+    }
+}
+
+
+
+// --- RENDER ---
 
 const renderFoodCards = (dataToDisplay) => {
 
@@ -80,13 +143,9 @@ const renderFoodCards = (dataToDisplay) => {
 
     dataToDisplay.map((info) => {
 
-        // We find the original index so the Modal always shows the right food
-
-        const originalIndex = allFoods.findIndex(f => f._id === info._id);
-
+        let foodId = info.id;
         const foodPic = foodPicture[info.name] || defaultImg;
-
-
+        const favIcon = isFav(foodId) ? "mdi--favourite.svg" : "mdi--favourite-border.svg";
 
         foodcontainer.innerHTML += `
 
@@ -103,14 +162,16 @@ const renderFoodCards = (dataToDisplay) => {
                     <div class="card-body p-4">
 
                         <h5 class="fw-bold mb-0">${info.name}</h5>
-
+                        <button id="fav-btn-${foodId}" class="bg-transparent" style="border:none; outline:none;" onclick="addFav('${foodId}')">
+                            <img src="${favIcon}" alt="favourite">
+                        </button>
                         <p class="text-muted small">${info.description}</p>
 
                         <div class="d-flex justify-content-between align-items-center pt-3 border-top">
 
                             <span class="price-tag">₦${info.price}</span>
 
-                            <button class="btn btn-success rounded-pill px-4 btn-sm fw-bold" onclick="showModal('${info._id}')">View Details</button>
+                            <button class="btn btn-success rounded-pill px-4 btn-sm fw-bold" onclick="showModal('${foodId}')">View Details</button>
 
                         </div>
 
@@ -126,6 +187,8 @@ const renderFoodCards = (dataToDisplay) => {
 
 
 
+// --- FETCH ---
+
 const fetchAllFoods = async() => {
 
     const foodcontainer = document.getElementById('foodContainer')
@@ -138,15 +201,16 @@ const fetchAllFoods = async() => {
 
     const awaiting = await awaited.json()
 
-    allFoods=awaiting.data;
+    allFoods = awaiting.data;
 
-        loadingSppinner.style.display='block'
+    loadingSppinner.style.display = 'block'
 
     setTimeout(() => {
 
-        loadingSppinner.style.display='none'
+        loadingSppinner.style.display = 'none'
 
         renderFoodCards(allFoods)
+        updateNavCount()
 
     }, 3000);
 
@@ -154,24 +218,21 @@ const fetchAllFoods = async() => {
 
 
 
-
-
-
-
-//modal
+// --- MODAL ---
 
 const showModal = (foodId) => {
 
     const fooddetailmodal = document.getElementById('foodDetailModal')
-
-    const info = allFoods.find(f => f._id === foodId);
+    const info = allFoods.find(f => String(f.id) === String(foodId));
 
     if (!info) {
         console.error("Could not find food with ID:", foodId);
         return; 
     }
 
-    const foodPic = foodPicture[info.name];
+
+    const foodPic = foodPicture[info.name]
+    const favBtnLabel = isFav(foodId) ? "Remove from Favorites" : "Add to Favorites";
 
     document.querySelector('.modal-content').innerHTML = `
 
@@ -195,17 +256,32 @@ const showModal = (foodId) => {
 
                     <span class="badge bg-success-subtle text-success mb-2">${info.category}</span>
 
+                    <span class="badge bg-warning-subtle text-success mb-2">${info.region}</span>
+
                     <h2 class="fw-800 mb-3">${info.name}</h2>
 
                     <p class="text-muted mb-4">${info.description}</p>
 
-                    <h6 class="fw-bold text-uppercase small opacity-50 mb-3">Ingredients</h6>
+                    <p class="text-muted mb-4">Preparation Time: ${info.preparationTime}</p>
 
-                    <p class="fw-bold text-secondary">${info.ingredients}</p>
+
+                    <p class="text-muted mb-4">serving size: ${info.servingSize}</p>
+
+                    <h6 class="fw-bold text-uppercase small opacity-50 mb-3">Ingredients</h6>
+                       
+                    <ul class="list-unstyled">
+                     ${info.ingredients.map(item => `<li class="fw-bold text-secondary">• ${String(item).trim()}</li>`).join('')}
+                    </ul>
+
+
+                    <p class="text-muted mb-4">Kcal: ${info.calories}J</p>
+
+
+                    <p class="text-muted mb-4">Price: ₦${info.price}</p>
 
                     <div class="d-grid gap-2">
 
-                        <button class="btn btn-success py-3 rounded-4 fw-bold">Add to Favorites</button>
+                        <button id="modal-fav-btn" data-id="${foodId}" class="btn btn-success py-3 rounded-4 fw-bold" onclick="addFav('${foodId}'); this.textContent = isFav('${foodId}') ? 'Remove from Favorites' : 'Add to Favorites';">${favBtnLabel}</button>
 
                     </div>
 
@@ -216,7 +292,7 @@ const showModal = (foodId) => {
             </div>
 
     `;
-
+    
 
 
     const modalElement = document.getElementById('foodDetailModal');
@@ -229,17 +305,15 @@ fetchAllFoods()
 
 
 
-const handleFilters = () => {
+// --- FILTERS ---
 
-    // 1. Get values using the IDs from your HTML
+const handleFilters = () => {
 
     const searchValue = document.getElementById('searchInput').value.toLowerCase();
 
     const categoryValue = document.getElementById('categoryFilter').value;
 
     const regionValue = document.getElementById('regionFilter').value;
-
-    // MATCH THESE TO YOUR HTML IDs:
 
     const isSpicy = document.getElementById('spicyFilter').checked;
 
@@ -249,27 +323,13 @@ const handleFilters = () => {
 
     const filteredFoods = allFoods.filter((info) => {
 
-        // Search logic
-
-        const matchesSearch = info.name.toLowerCase().includes(searchValue) ||
-
-                              info.description.toLowerCase().includes(searchValue);
+        const matchesSearch = info.name.toLowerCase().includes(searchValue) || info.description.toLowerCase().includes(searchValue);
 
        
-
-        // Category logic (Note: Ensure API case matches, e.g., 'Swallow' vs 'swallow')
-
         const matchesCategory = categoryValue === 'all' || info.category === categoryValue;
 
-       
-
-        // Region logic
 
         const matchesRegion = regionValue === 'all' || info.region === regionValue;
-
-       
-
-        // Boolean logic (The API might use true/false or "Yes"/"No")
 
         const matchesSpicy = !isSpicy || info.isSpicy === true;
 
@@ -280,8 +340,6 @@ const handleFilters = () => {
         return matchesSearch && matchesCategory && matchesRegion && matchesSpicy && matchesVeg;
 
     });
-
-
 
     renderFoodCards(filteredFoods);
 
